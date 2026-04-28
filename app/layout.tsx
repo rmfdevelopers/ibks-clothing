@@ -1,18 +1,27 @@
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import './globals.css';
 
-const heading = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' });
-const body = Inter({ subsets: ['latin'], variable: '--font-body' });
+const heading = Cormorant_Garamond({ 
+  subsets: ['latin'], 
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-heading' 
+});
+
+const body = DM_Sans({ 
+  subsets: ['latin'], 
+  weight: ['400', '500', '700'],
+  variable: '--font-body' 
+});
 
 export const metadata = {
-  title: 'IBKS CLOTHING | Adorned in Strength and Dignity',
-  description: 'Lagos premier boutique specializing in traditional Nigerian heritage and modern corporate excellence.',
+  title: 'IBKS CLOTHING | Class in Clothing',
+  description: 'Lagos premier destination for Traditional Nigerian Attire and Bespoke Corporate Wear.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${heading.variable} ${body.variable} font-sans`}>
+      <body className={`${heading.variable} ${body.variable} font-sans bg-primary selection:bg-accent/30`}>
         {children}
       </body>
     </html>
